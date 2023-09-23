@@ -300,7 +300,7 @@ function createChar(charName, charClass, charGender, bossesDefeated) {
 
   //Retreiving data and adding onto the character and boss table.
 
-  charImg.src = `/assets/characters/${charClass}${charGender}.webp`;
+  charImg.src = `./assets/characters/${charClass}${charGender}.webp`;
   charIGN.innerText = `IGN: ${charName}`;
   bTHeadBossName.innerText = "Boss";
   bTHeadDifficulty.innerText = "Difficulty";
