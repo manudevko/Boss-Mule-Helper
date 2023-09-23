@@ -201,7 +201,7 @@ const bosses = {
     IMG: "./assets/seren.webp",
     Difficulty: "Extreme",
   },
-  BlackMageE: {
+  BlackmageE: {
     Price: 10000000000,
     IMG: "./assets/blackmage.webp",
     Difficulty: "Extreme",
