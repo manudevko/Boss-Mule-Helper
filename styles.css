@@ -40,8 +40,9 @@ thead th {
 }
 
 @media (max-width: 800px) {
-  #characters {
+  table {
     max-width: 90%;
+    margin: auto;
   }
   #character-form{
     max-height: 90vh;
