@@ -41,7 +41,7 @@ thead th {
 
 @media (max-width: 800px) {
   #characters {
-    max-width: 100%;
+    max-width: 90%;
   }
   #character-form{
     max-height: 90vh;
