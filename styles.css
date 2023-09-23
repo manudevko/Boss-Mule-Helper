@@ -35,6 +35,10 @@ thead th {
   margin: auto;
 }
 
+.name, .class, .gender{
+  width: 500px;
+}
+
 @media (max-width: 800px) {
   #characters {
     max-width: 100%;
@@ -42,4 +46,7 @@ thead th {
   #character-form{
     max-height: 90vh;
   }
+  .name, .class, .gender{
+  width: 250px;
+}
 }
