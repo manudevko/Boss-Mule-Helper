@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Boss Mule Helper</title>
+  </head>
+  <body class="bg-gray-900 relative">
+    <div
+      id="create-characters-popup"
+      class="hidden text-sm bg-slate-800 border border-slate-700 rounded absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full xl:w-1/3 z-50"
+    >
+      <form
+        id="character-form"
+        class="bg-slate-800 flex flex-col flex-wrap gap-y-12 p-8"
+        action="#"
+      >
+        <div class="name flex justify-between pl-5 pr-8 xl:pr-24 xl:pl-20">
+          <label class="text-white" for="Name">IGN:</label>
+          <input class="w-1/2" type="text" name="Name" id="name" />
+        </div>
+        <div
+          class="gender flex justify-between pl-5 pr-8 xl:pr-24 xl:pl-20 items-center gap-x-3"
+        >
+          <label class="text-white" for="Name">Gender:</label>
+          <select class="p-1 w-1/2" name="gender" id="gender-select">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+          </select>
+        </div>
+        <div
+          class="class flex justify-between pl-5 pr-8 xl:pr-24 xl:pl-20 items-center gap-x-3"
+        >
+          <label class="text-white" for="Name">Class:</label>
+          <select class="p-1 w-1/2" name="gender" id="class-select">
+            <option value="adele">Adele</option>
+            <option value="angelic">Angelic Buster</option>
+            <option value="aran">Aran</option>
+            <option value="fp">Archmage F/P</option>
+            <option value="il">Archmage I/L</option>
+            <option value="ark">Ark</option>
+            <option value="battlem">Battle Mage</option>
+            <option value="bishop">Bishop</option>
+            <option value="blaster">Blaster</option>
+            <option value="blaze">Blaze Wizard</option>
+            <option value="bm">Bowmaster</option>
+            <option value="bt">Beast Tamer</option>
+            <option value="bucc">Buccaneer</option>
+            <option value="cadena">Cadena</option>
+            <option value="cannon">Cannoneer</option>
+            <option value="corsair">Corsair</option>
+            <option value="da">Demon Avenger</option>
+            <option value="db">Dual Blade</option>
+            <option value="drk">Dark Knight</option>
+            <option value="ds">Demon Slayer</option>
+            <option value="dw">Dawn Warrior</option>
+            <option value="evan">Evan</option>
+            <option value="hayato">Hayato</option>
+            <option value="hero">Hero</option>
+            <option value="hoyoung">Hoyoung</option>
+            <option value="illium">Illium</option>
+            <option value="kain">Kain</option>
+            <option value="kaiser">Kaiser</option>
+            <option value="kanna">Kanna</option>
+            <option value="khali">Khali</option>
+            <option value="kinesis">Kinesis</option>
+            <option value="lara">Lara</option>
+            <option value="lumi">Luminous</option>
+            <option value="mechanic">Mechanic</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="mihile">Mihile</option>
+            <option value="mm">Marksman</option>
+            <option value="nl">Nightlord</option>
+            <option value="nw">Night Walker</option>
+            <option value="paladin">Paladin</option>
+            <option value="pf">Pathfinder</option>
+            <option value="phantom">Phantom</option>
+            <option value="shade">Shade</option>
+            <option value="shadower">Shadower</option>
+            <option value="tb">Thunder Breaker</option>
+            <option value="wa">Wind Archer</option>
+            <option value="wh">Wild Hunter</option>
+            <option value="xenon">Xenon</option>
+            <option value="zero">Zero</option>
+          </select>
+        </div>
+        <div
+          class="bossesPopup flex flex-wrap text-white gap-x-12 gap-y-6 max-h-96 overflow-y-scroll"
+        >
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/cygnus.webp" />
+            <p>Easy</p>
+            <input value="CygnusE" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/hilla.webp" />
+            <p>Hard</p>
+            <input value="Hilla" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/pb.webp" />
+            <p>Chaos</p>
+            <input value="Pinkbean" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/cygnus.webp" />
+            <p>Normal</p>
+            <input value="CygnusN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/zakum.webp" />
+            <p>Chaos</p>
+            <input value="Zakum" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/queen.webp" />
+            <p>Chaos</p>
+            <input value="Queen" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/pierre.webp" />
+            <p>Chaos</p>
+            <input value="Pierre" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/vonbon.webp" />
+            <p>Chaos</p>
+            <input value="Vonbon" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/pno.webp" />
+            <p>Normal</p>
+            <input value="Pno" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/magnus.webp" />
+            <p>Hard</p>
+            <input value="Magnus" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/vellum.webp" />
+            <p>Chaos</p>
+            <input value="Vellum" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/pap.webp" />
+            <p>Chaos</p>
+            <input value="Papulatus" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/akechi.webp" />
+            <p>Normal</p>
+            <input value="Akechi" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/lotus.webp" />
+            <p>Normal</p>
+            <input value="LotusN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/damien.webp" />
+            <p>Normal</p>
+            <input value="DamienN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/slime.webp" />
+            <p>Normal</p>
+            <input value="SlimeN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/lucid.webp" />
+            <p>Easy</p>
+            <input value="LucidE" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/will.webp" />
+            <p>Easy</p>
+            <input value="WillE" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/lucid.webp" />
+            <p>Normal</p>
+            <input value="LucidN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/will.webp" />
+            <p>Normal</p>
+            <input value="WillN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/gloom.webp" />
+            <p>Normal</p>
+            <input value="GloomN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/darknell.webp" />
+            <p>Normal</p>
+            <input value="DarknellN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/damien.webp" />
+            <p>Hard</p>
+            <input value="DamienH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/lotus.webp" />
+            <p>Hard</p>
+            <input value="LotusH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/lucid.webp" />
+            <p>Hard</p>
+            <input value="LucidH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/will.webp" />
+            <p>Hard</p>
+            <input value="WillH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/vhilla.webp" />
+            <p>Normal</p>
+            <input value="VhillaN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/slime.webp" />
+            <p>Chaos</p>
+            <input value="SlimeC" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/gloom.webp" />
+            <p>Chaos</p>
+            <input value="GloomC" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/darknell.webp" />
+            <p>Hard</p>
+            <input value="DarknellH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/vhilla.webp" />
+            <p>Hard</p>
+            <input value="VhillaH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/seren.webp" />
+            <p>Normal</p>
+            <input value="SerenN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/seren.webp" />
+            <p>Hard</p>
+            <input value="SerenH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/kalos.webp" />
+            <p>Chaos</p>
+            <input value="KalosC" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/kaling.webp" />
+            <p>Normal</p>
+            <input value="KalingN" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/blackmage.webp" />
+            <p>Hard</p>
+            <input value="BlackmageH" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/seren.webp" />
+            <p>Extreme</p>
+            <input value="SerenE" type="checkbox" name="boss" />
+          </div>
+          <div
+            class="flex justify-between w-full px-5 xl:px-20 sm:w-full m-auto items-center gap-x-5"
+          >
+            <img class="h-12 border rounded" src="./assets/blackmage.webp" />
+            <p>Extreme</p>
+            <input value="BlackmageE" type="checkbox" name="boss" />
+          </div>
+        </div>
+        <input
+          id="submit-char"
+          class="text-1xl bg-green-600 rounded p-2 text-white w-1/4 m-auto cursor-pointer"
+          type="submit"
+          value="Create"
+        />
+      </form>
+    </div>
+    <div id="content">
+      <header id="header" class="pt-6">
+        <h1
+          class="text-2xl md:text-3xl uppercase text-white text-center font-bold"
+        >
+          Boss mules helper
+        </h1>
+        <hr class="mt-5" />
+      </header>
+
+      <section
+        id="button"
+        class="text-white flex flex-row flex-wrap justify-center gap-x-7 mt-8"
+      >
+        <button
+          class="bg-cyan-600 text-sm rounded py-2 px-3"
+          id="create-character"
+        >
+          Create Character
+        </button>
+        <button
+          class="bg-red-700 text-sm rounded py-2 px-3"
+          id="delete-characters"
+        >
+          Delete Characters
+        </button>
+      </section>
+
+      <section id="currency" class="my-16 mx-8">
+        <div
+          class="text-1xl md:text-2xl text-white text-center font-bold flex flex-col md:flex-row flex-row justify-center items-center gap-x-4 gap-y-4 m-auto"
+        >
+          <p>Expected mesos this week: <span id="total-mesos">0</span></p>
+          <img class="h-9" class="" src="assets/meso.png" alt="" />
+        </div>
+        <div
+          class="text-1xl md:text-2xl text-white text-center font-bold flex flex-col md:flex-row flex-row justify-center items-center mt-4 g4 gap-y-4 gap-x-3 m-auto"
+        >
+          <p>
+            Available crystals this week: <span id="total-crystals">180</span>
+          </p>
+          <img class="h-9" class="" src="assets/crystal.webp" alt="" />
+        </div>
+      </section>
+
+      <section
+        id="characters"
+        class="flex flex-row flex-wrap justify-center items-start gap-x-12 gap-y-14 mt-16"
+      ></section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

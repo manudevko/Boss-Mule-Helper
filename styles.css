@@ -1,0 +1,42 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+hr {
+  width: 10%;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+body {
+  scrollbar-color: #334155 #1f2937;
+}
+
+#characters {
+  max-width: 70%;
+  margin: 50px auto;
+}
+
+tbody {
+  max-height: 450px;
+}
+
+.bossesPopup p,
+tbody td,
+thead th {
+  width: 120px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.w-100px {
+  width: 100px;
+  margin: auto;
+}
+
+@media (max-width: 800px) {
+  #characters {
+    max-width: 100%;
+  }
+}
